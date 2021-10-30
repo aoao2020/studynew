@@ -22,8 +22,6 @@ class kekkaViewController: UIViewController {
     @IBOutlet var mokuhyoulabel: UILabel!
     
     var still: Double = 0.0
-    //    var number1 = realm.objects(Mokuhyou.self).first
-    //    var number2 = Realm.objects(Konkai.self).first
     
     
     var outputValue : TimeInterval?
@@ -35,7 +33,7 @@ class kekkaViewController: UIViewController {
      //あと何分目標まで必要なのかの計算
         still = Double(Mokuhyous!.mokuhyou - (outputValue ?? 0))
         //        }
-//        Mokuhyous!.mokuhyou -= (outputValue ?? 0)
+
         try! realm.write(){
             Mokuhyous!.mokuhyou -= (outputValue ?? 0)
         }
@@ -56,12 +54,7 @@ class kekkaViewController: UIViewController {
         let m = (timeInt - s) / 60 % 3600
         nowtimeLabel.text = String(format: "%02d:%02d", m,s)
         
-        //            self.nowtime.text = String(self.appdelegate.count)
-        
-        //         count = saveData.object(forKey: "time")
-        //        label.text = String(count)
-        
-        // Do any additional setup after loading the view.
+       
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
@@ -90,14 +83,6 @@ class kekkaViewController: UIViewController {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
     
 }

@@ -27,10 +27,7 @@ class TimerViewController: UIViewController {
         
         saveData.set(count, forKey: "time")
         
-        //        count = saveData.float(forKey: "time")
-        //        label.text = String(count)
-        //            jikan.text = saveDate.object(forKey: "content") as? String
-     
+        
         
     }
    
@@ -40,14 +37,7 @@ class TimerViewController: UIViewController {
     
     @objc func up() {
         
-        //   if count > 0 {
-        
-        //            let hours = count / 3600
-        //
-        //            let minutes = count / 60
-        //
-        //            let seconds = count / 60
-        
+       
         count += 0.01
         
         let timeInt = Int(count)
@@ -65,17 +55,7 @@ class TimerViewController: UIViewController {
         print(type(of: count))
         print(Int(count)) // 3.0 (四捨五入)
         
-//        jikan.text = String(count)
-        
-        //            jikan.text = "\(hours):\(minutes):\(seconds)"
-        
-        //   }
-        
-        //countを0.01たす
-        //        count = count + 0.01
-        //ラベルに小数点以下２桁まで表示
-//        jikan.text = String(format: "%.2f", count)
-    }
+  }
     
     @IBAction func start() {
         
@@ -84,10 +64,7 @@ class TimerViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 0.01,
                                          target: self, selector: #selector(self.up), userInfo: nil, repeats: true )
         }
-//        if timerRunning == false{
-//                   timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
-//                   timerRunning = true
-//               }
+
 
     }
 
