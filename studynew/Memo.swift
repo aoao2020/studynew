@@ -10,6 +10,7 @@ import RealmSwift
 
 class Mokuhyou: Object {
     @objc dynamic var mokuhyou: TimeInterval = 0
+    @objc dynamic var date: Date?
 }
 
 class Konkai: Object {

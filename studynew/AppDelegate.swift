@@ -25,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
 //            Realm.Configuration.defaultConfiguration = config
             
+//        var config = Realm.Configuration()
+//        config.deleteRealmIfMigrationNeeded = true
+//        
+//        let realm = try! Realm(configuration: config)
+//        
         // Override point for customization after application launch.
         return true
     }

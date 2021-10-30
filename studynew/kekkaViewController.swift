@@ -32,10 +32,13 @@ class kekkaViewController: UIViewController {
         super.viewWillAppear(animated)
         let memo: Mokuhyou? = read()
         let neko: Konkai? = read()
+     //あと何分目標まで必要なのかの計算
         still = Double(Mokuhyous!.mokuhyou - (outputValue ?? 0))
         //        }
-        
-        try! realm.write(Mokuhyous!.mokuhyou)
+//        Mokuhyous!.mokuhyou -= (outputValue ?? 0)
+        try! realm.write(){
+            Mokuhyous!.mokuhyou -= (outputValue ?? 0)
+        }
         //桁数をそろえる
         let timeInt = Int(still)
         let s = (timeInt) % 60

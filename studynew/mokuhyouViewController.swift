@@ -85,9 +85,16 @@ class mokuhyouViewController: UIViewController, UITextFieldDelegate {
 //           }
 //
         @IBAction func ok() {
-
+            let Mokuhyous = try! Realm().objects(Mokuhyou.self)
+            for m in Mokuhyous {
+                if    stringFromDate(dat: m.date!, format: "MM/dd") ==  stringFromDate(dat: Date(), format: "MM/dd"){
+                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    return
+                }
+            }
             let newMemo = Mokuhyou()
             newMemo.mokuhyou = datePicker.countDownDuration
+            newMemo.date = Date()
             try! realm.write {
                 realm.add(newMemo)
             }
@@ -107,7 +114,12 @@ class mokuhyouViewController: UIViewController, UITextFieldDelegate {
 //        // Pass the selected object to the new view controller.
 //    }
 //    */
-
+    private func stringFromDate(dat: Date, format: String) -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = format
+        return formatter.string(from: dat)
+    }
 }
 
 
