@@ -35,6 +35,7 @@ class mokuhyouViewController: UIViewController, UITextFieldDelegate {
         @IBAction func ok() {
             let Mokuhyous = try! Realm().objects(Mokuhyou.self)
             for m in Mokuhyous {
+              //日付が同じの時目標が設定できなくする
                 if    stringFromDate(dat: m.date!, format: "MM/dd") ==  stringFromDate(dat: Date(), format: "MM/dd"){
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                     return
