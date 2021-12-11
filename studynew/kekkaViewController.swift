@@ -80,7 +80,7 @@ class kekkaViewController: UIViewController {
             realm.add(newMemo)
         }
         
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
    

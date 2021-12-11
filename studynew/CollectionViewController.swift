@@ -40,6 +40,17 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         
     }
+    var save = 0
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        save = indexPath.row
+        self.performSegue(withIdentifier: "grahu", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next = segue.destination as! ChartViewController
+        next.save = save
+    }
     
     
    

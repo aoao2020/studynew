@@ -1,0 +1,72 @@
+//
+//  ChartViewController.swift
+//  studynew
+//
+//  Created by アオイ on 2021/11/27.
+//
+
+import UIKit
+import Charts
+import RealmSwift
+class ChartViewController: UIViewController {
+
+    @IBOutlet weak var barChartView: BarChartView!
+    
+    let realm = try! Realm()
+    let Mokuhyous = try! Realm().objects(Mokuhyou.self)
+    var save = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //グラフに表示される値
+        let rawData: [Float] = [Mokuhyous[save].from0to4, Mokuhyous[save].from4to8, Mokuhyous[save].from8to12, Mokuhyous[save].from12to16, Mokuhyous[save].from16to20, Mokuhyous[save].from20to24]
+        let entries = rawData.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
+        let dataSet = BarChartDataSet(entries: entries)
+        let data = BarChartData(dataSet: dataSet)
+        barChartView.data = data
+
+        // X軸のラベルの位置を下に設定
+        barChartView.xAxis.labelPosition = .bottom
+        // X軸のラベルの色を設定
+        barChartView.xAxis.labelTextColor = .systemGray
+        // X軸の線、グリッドを非表示にする
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.drawAxisLineEnabled = false
+        
+        // 右側のY座標軸は非表示にする
+        barChartView.rightAxis.enabled = false
+        
+        // Y座標の値が0始まりになるように設定
+        barChartView.leftAxis.axisMinimum = 0.0
+        barChartView.leftAxis.drawZeroLineEnabled = true
+        barChartView.leftAxis.zeroLineColor = .systemGray
+        // ラベルの数を設定
+        barChartView.leftAxis.labelCount = 5
+        // ラベルの色を設定
+        barChartView.leftAxis.labelTextColor = .systemGray
+        // グリッドの色を設定
+        barChartView.leftAxis.gridColor = .systemGray
+        // 軸線は非表示にする
+        barChartView.leftAxis.drawAxisLineEnabled = false
+        
+        barChartView.legend.enabled = false
+        
+       
+        dataSet.drawValuesEnabled = false
+        //グラフの色が青色
+        dataSet.colors = [.systemBlue]
+    
+    }
+    
+    
+    
+    // Do any additional setup after loading the view.
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    
+
+}

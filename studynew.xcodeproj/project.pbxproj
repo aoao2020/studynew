@@ -10,6 +10,8 @@
 		F60AA3BD264689770025F5FB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F60AA3BC264689770025F5FB /* Realm */; };
 		F60AA3BF264689770025F5FB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F60AA3BE264689770025F5FB /* RealmSwift */; };
 		F60AA3C42646A7100025F5FB /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AA3C32646A7100025F5FB /* Memo.swift */; };
+		F61AD42E27520FB200C3F730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F61AD42D27520FB200C3F730 /* Charts */; };
+		F61AD433275210D200C3F730 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61AD432275210D200C3F730 /* ChartViewController.swift */; };
 		F6351C2D25D7C40300CBD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6351C2C25D7C40300CBD714 /* AppDelegate.swift */; };
 		F6351C2F25D7C40300CBD714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6351C2E25D7C40300CBD714 /* SceneDelegate.swift */; };
 		F6351C3125D7C40300CBD714 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6351C3025D7C40300CBD714 /* TimerViewController.swift */; };
@@ -46,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		F60AA3C32646A7100025F5FB /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		F61AD432275210D200C3F730 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		F6351C2925D7C40300CBD714 /* studynew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studynew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6351C2C25D7C40300CBD714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6351C2E25D7C40300CBD714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60AA3BF264689770025F5FB /* RealmSwift in Frameworks */,
+				F61AD42E27520FB200C3F730 /* Charts in Frameworks */,
 				F60AA3BD264689770025F5FB /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +138,7 @@
 				F60AA3C32646A7100025F5FB /* Memo.swift */,
 				F69C83DB266B557100E81893 /* CollectionViewController.swift */,
 				F69C83E0266B558200E81893 /* CollectionViewCell.swift */,
+				F61AD432275210D200C3F730 /* ChartViewController.swift */,
 			);
 			path = studynew;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			packageProductDependencies = (
 				F60AA3BC264689770025F5FB /* Realm */,
 				F60AA3BE264689770025F5FB /* RealmSwift */,
+				F61AD42D27520FB200C3F730 /* Charts */,
 			);
 			productName = studynew;
 			productReference = F6351C2925D7C40300CBD714 /* studynew.app */;
@@ -249,6 +255,7 @@
 			mainGroup = F6351C2025D7C40300CBD714;
 			packageReferences = (
 				F60AA3BB264689770025F5FB /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				F61AD42C27520FB200C3F730 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = F6351C2A25D7C40300CBD714 /* Products */;
 			projectDirPath = "";
@@ -304,6 +311,7 @@
 				F6C05AA925EA351900027B25 /* mokuhyouViewController.swift in Sources */,
 				F6351C2F25D7C40300CBD714 /* SceneDelegate.swift in Sources */,
 				F6C05ABC25EA3B0900027B25 /* Home1ViewController.swift in Sources */,
+				F61AD433275210D200C3F730 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +648,14 @@
 				minimumVersion = 10.7.5;
 			};
 		};
+		F61AD42C27520FB200C3F730 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -652,6 +668,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F60AA3BB264689770025F5FB /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		F61AD42D27520FB200C3F730 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F61AD42C27520FB200C3F730 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

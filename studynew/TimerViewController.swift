@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TimerViewController: UIViewController {
     var timerRunning = false
@@ -15,6 +16,10 @@ class TimerViewController: UIViewController {
     var saveData: UserDefaults = UserDefaults.standard
     @IBOutlet var jikan: UILabel!
     //var saveDate: UserDefaults = UserDefaults.standard
+    
+    let realm = try! Realm()
+    //    let Mokuhyous = try! Realm().objects(Mokuhyou.self)
+    let Mokuhyous = try! Realm().objects(Mokuhyou.self)
     
     
     //    var count: Float = 0.0
@@ -38,6 +43,20 @@ class TimerViewController: UIViewController {
     @objc func up() {
         
        
+        
+        let calender = Calendar(identifier: .gregorian)
+       let date2 = Date()
+        let time0 = calender.date(bySettingHour: 0, minute: 0, second: 0, of: date2)
+        let time4 = calender.date(bySettingHour: 4, minute: 0, second: 0, of: date2)
+        let time8 = calender.date(bySettingHour: 8, minute: 0, second: 0, of: date2)
+        let time12 = calender.date(bySettingHour: 12, minute: 0, second: 0, of: date2)
+        let time16 = calender.date(bySettingHour: 16, minute: 0, second: 0, of: date2)
+        let time20 = calender.date(bySettingHour: 20, minute: 0, second: 0, of: date2)
+        
+       
+        
+        
+        
         count += 0.01
         
         let timeInt = Int(count)
@@ -47,8 +66,23 @@ class TimerViewController: UIViewController {
         print(s, m)
         
 //        count = count + 1
-        
-        
+      try!  realm.write {
+        if date2.compare(time4!) == .orderedAscending {
+            Mokuhyous.last?.from0to4 += 0.01
+       
+        } else if date2.compare(time8!) == .orderedAscending {
+            Mokuhyous.last?.from4to8 += 0.01
+        } else if date2.compare(time12!) == .orderedAscending {
+            Mokuhyous.last?.from8to12 += 0.01
+    } else if date2.compare(time16!) == .orderedAscending {
+        Mokuhyous.last?.from12to16 += 0.01
+    } else if date2.compare(time20!) == .orderedAscending {
+        Mokuhyous.last?.from16to20 += 0.01
+    }
+    else {
+        Mokuhyous.last?.from20to24 += 0.01
+    }
+      }
 //        jikan.text = String(format: "%02d:%02d.%02d", m,s,ms)
         jikan.text = String(format: "%02d:%02d", m,s)
 //        jikan.text = String(count)
