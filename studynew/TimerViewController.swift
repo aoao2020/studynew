@@ -118,7 +118,10 @@ class TimerViewController: UIViewController {
         if timer.isValid {
             //timerstop
             timer.invalidate()
-       }
+      
+      }
+        jikan.text = "0"
+        count = 0
         appdelegate.countNum = Int(count)
     }
 }

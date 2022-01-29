@@ -18,7 +18,7 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //グラフに表示される値
-        let rawData: [Float] = [Mokuhyous[save].from0to4, Mokuhyous[save].from4to8, Mokuhyous[save].from8to12, Mokuhyous[save].from12to16, Mokuhyous[save].from16to20, Mokuhyous[save].from20to24]
+        let rawData: [Float] = [Mokuhyous[save].from0to4/60, Mokuhyous[save].from4to8/60, Mokuhyous[save].from8to12/60, Mokuhyous[save].from12to16/60, Mokuhyous[save].from16to20/60, Mokuhyous[save].from20to24/60]
         let entries = rawData.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
         let dataSet = BarChartDataSet(entries: entries)
         let data = BarChartData(dataSet: dataSet)
@@ -37,6 +37,7 @@ class ChartViewController: UIViewController {
         
         // Y座標の値が0始まりになるように設定
         barChartView.leftAxis.axisMinimum = 0.0
+        barChartView.leftAxis.axisMaximum = 250
         barChartView.leftAxis.drawZeroLineEnabled = true
         barChartView.leftAxis.zeroLineColor = .systemGray
         // ラベルの数を設定
@@ -49,7 +50,7 @@ class ChartViewController: UIViewController {
         barChartView.leftAxis.drawAxisLineEnabled = false
         
         barChartView.legend.enabled = false
-        
+        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter (values: ["0-4","4-8","8-12","12-16","16-20","20-24"])
        
         dataSet.drawValuesEnabled = false
         //グラフの色が青色
@@ -68,5 +69,14 @@ class ChartViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     
-
+//    class ChartFormatter: NSObject, IAxisValueFormatter {
+//           let rawData = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+//
+//           func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+//
+//               let index = Int(value)
+//               return rawData[index]
+//           }
+//
+//       }
 }
