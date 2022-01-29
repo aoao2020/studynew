@@ -37,9 +37,16 @@ class mokuhyouViewController: UIViewController, UITextFieldDelegate {
             for m in Mokuhyous {
               //日付が同じの時目標が設定できなくする
                 if    stringFromDate(dat: m.date!, format: "MM/dd") ==  stringFromDate(dat: Date(), format: "MM/dd"){
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    let alert: UIAlertController = UIAlertController(title: "注意！", message: "今日はすでに目標を設定しました", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(
+                                        title: "OK",
+                                        style: .default,
+                                        handler: { action in
+                                            }))
+                    present(alert, animated: true, completion: nil)
+                    
                     return
-                }
+               }
             }
           
             let newMemo = Mokuhyou()

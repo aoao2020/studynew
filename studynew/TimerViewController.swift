@@ -109,6 +109,7 @@ class TimerViewController: UIViewController {
                 let next = segue.destination as? kekkaViewController
                 // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValue = self.count
+               count = 0
                 print(count)
             }
         }
@@ -121,7 +122,7 @@ class TimerViewController: UIViewController {
       
       }
         jikan.text = "0"
-        count = 0
+//        count = 0
         appdelegate.countNum = Int(count)
     }
 }

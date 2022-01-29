@@ -75,20 +75,22 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         (cell.contentView.viewWithTag(1) as? UILabel)?.text = stringFromDate(dat: Mokuhyous[indexPath.row].date!, format: "MM/dd")
         (cell.contentView.viewWithTag(2) as? UIImageView)?.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
+        
+        
 
    if timeInt <= 0
    {
-    (cell.contentView.viewWithTag(2) as? UIImageView)?.image = UIImage(named: "good")
+    (cell.contentView.viewWithTag(2) as? UIImageView)?.image = UIImage(named: "smile")
    }
    else {
-    (cell.contentView.viewWithTag(2) as? UIImageView)?.image = UIImage(named: "booo")
+    (cell.contentView.viewWithTag(2) as? UIImageView)?.image = UIImage(named: "bad")
    }
         
 //        (cell.contentView.viewWithTag(1) as? UILabel)?.text = String(Konkais[indexPath.row].konkai)
         
         return cell
     }
-    
+   
    
     
     private func stringFromDate(dat: Date, format: String) -> String {
@@ -99,4 +101,5 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
 }
+
 

@@ -54,7 +54,7 @@ class ChartViewController: UIViewController {
        
         dataSet.drawValuesEnabled = false
         //グラフの色が青色
-        dataSet.colors = [.systemBlue]
+        dataSet.colors = [UIColor(red: 0.35, green: 0.73, blue: 0.76, alpha: 1.0)]
     
     }
     

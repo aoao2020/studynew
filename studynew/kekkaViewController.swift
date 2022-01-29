@@ -34,6 +34,9 @@ class kekkaViewController: UIViewController {
         still = Double(Mokuhyous!.mokuhyou - (outputValue ?? 0))
         //        }
 
+        
+        
+        
         try! realm.write(){
             Mokuhyous!.mokuhyou -= (outputValue ?? 0)
         }
@@ -41,7 +44,12 @@ class kekkaViewController: UIViewController {
         let timeInt = Int(still)
         let s = (timeInt) % 60
         let m = (timeInt - s) / 60 % 3600
+        if still > 0 {
         mokuhyoulabel.text = String(format: "%02d:%02d", m,s)
+    
+        }else{ mokuhyoulabel.text = String("goal")
+        }
+        
     }
     
     override func viewDidLoad() {
