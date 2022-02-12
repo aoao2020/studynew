@@ -15,8 +15,20 @@ class ChartViewController: UIViewController {
     let realm = try! Realm()
     let Mokuhyous = try! Realm().objects(Mokuhyou.self)
     var save = 0
+  
+    //グラフの縦軸の設定のための変数
+    var kkk:Float = 0.0
+    var lll:Float = 0.0
+    var jjj:Float = 0.0
+    var uuu:Float = 0.0
+    var yyy:Float = 0.0
+    var rrr:Float = 0.0
+    
+    var largest:Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //グラフに表示される値
         let rawData: [Float] = [Mokuhyous[save].from0to4/60, Mokuhyous[save].from4to8/60, Mokuhyous[save].from8to12/60, Mokuhyous[save].from12to16/60, Mokuhyous[save].from16to20/60, Mokuhyous[save].from20to24/60]
         let entries = rawData.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
@@ -24,6 +36,16 @@ class ChartViewController: UIViewController {
         let data = BarChartData(dataSet: dataSet)
         barChartView.data = data
 
+        kkk = Mokuhyous[save].from0to4/60
+        lll = Mokuhyous[save].from4to8/60
+        jjj = Mokuhyous[save].from8to12/60
+        uuu = Mokuhyous[save].from12to16/60
+        yyy = Mokuhyous[save].from16to20/60
+        rrr = Mokuhyous[save].from20to24/60
+        
+        largest = max(kkk,lll,jjj,uuu,yyy,rrr)
+        
+        
         // X軸のラベルの位置を下に設定
         barChartView.xAxis.labelPosition = .bottom
         // X軸のラベルの色を設定
@@ -37,7 +59,7 @@ class ChartViewController: UIViewController {
         
         // Y座標の値が0始まりになるように設定
         barChartView.leftAxis.axisMinimum = 0.0
-        barChartView.leftAxis.axisMaximum = 250
+        barChartView.leftAxis.axisMaximum = Double(largest)
         barChartView.leftAxis.drawZeroLineEnabled = true
         barChartView.leftAxis.zeroLineColor = .systemGray
         // ラベルの数を設定
