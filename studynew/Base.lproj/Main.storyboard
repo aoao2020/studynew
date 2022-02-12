@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FS8-8B-fRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489.85507246376818" y="957.58928571428567"/>
+            <point key="canvasLocation" x="548" y="958"/>
         </scene>
         <!--Kekka View Controller-->
         <scene sceneID="h18-vM-BOj">
@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5su-lC-HVQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2482.608695652174" y="91.741071428571431"/>
+            <point key="canvasLocation" x="2467" y="80"/>
         </scene>
         <!--graph-->
         <scene sceneID="5Yy-TX-hsM">
@@ -250,7 +250,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7W-JR-UlA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611.5942028985507" y="957.58928571428567"/>
+            <point key="canvasLocation" x="1512" y="958"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="dLO-5c-WJ7">
@@ -280,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A62-DF-vVV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2542.0289855072465" y="951.5625"/>
+            <point key="canvasLocation" x="2513" y="958"/>
         </scene>
         <!--timer-->
         <scene sceneID="V8H-aA-rhQ">
