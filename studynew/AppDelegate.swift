@@ -29,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.deleteRealmIfMigrationNeeded = true
         
         let realm = try! Realm(configuration: config)
+        if try! Realm().objects(Mokuhyou.self).last == nil {
+            let memo = Mokuhyou()
+            memo.mokuhyou =  1
+            memo.date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+            try! realm.write {
+                        realm.add(memo)
+            }
+        }
 //        
         // Override point for customization after application launch.
         return true

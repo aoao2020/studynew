@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6s9-EW-8Ou">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6s9-EW-8Ou">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -176,7 +177,6 @@
                             <constraint firstItem="kgf-O0-WG1" firstAttribute="trailing" secondItem="CRO-Vv-1Uq" secondAttribute="trailing" constant="52" id="mAd-lt-q1X"/>
                             <constraint firstItem="Lif-Ai-KHG" firstAttribute="top" secondItem="BOa-dS-X5C" secondAttribute="bottom" constant="120" id="mxs-cL-rIp"/>
                             <constraint firstItem="iLX-cg-kvV" firstAttribute="top" secondItem="CRO-Vv-1Uq" secondAttribute="bottom" constant="120" id="nDS-SV-roG"/>
-                            <constraint firstItem="iLX-cg-kvV" firstAttribute="leading" secondItem="Lif-Ai-KHG" secondAttribute="trailing" id="poO-eq-9hC"/>
                             <constraint firstItem="iLX-cg-kvV" firstAttribute="leading" secondItem="Lif-Ai-KHG" secondAttribute="trailing" constant="30" id="qyc-xJ-xlb"/>
                             <constraint firstItem="BOa-dS-X5C" firstAttribute="leading" secondItem="I7n-Hn-U68" secondAttribute="leading" id="rkP-Hh-gLU"/>
                         </constraints>
